@@ -1,83 +1,100 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <script defer src="script.js"></script>
-    <body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accepp?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #131316;
+        }
+        nav {
+            background-color: #f0f0f0;
+            padding: 1rem;
+            text-align: center;
+        }
+        main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            position: relative;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            position: relative;
+        }
+        button {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        #movingButton {
+            position: absolute;
+            left: 100%; /* Position it right after the first button */
+            margin-left: 1rem; /* Add some space between buttons */
+            transition: all 0.1s ease;
+        }
+        .yztext {
+        /* transform: translateX(-80px); */
+        font-family: monospace;
+        text-align: center;
+        overflow: hidden;
+        white-space: nowrap;
+        margin: 0 auto;
+        letter-spacing: 5px;
+        animation: typing 5s, blink-caret 1s step-end infinite;
+        }
 
-        <div class = nav id="nav">
-            <h1 class="yztext" id="yztext">Sorry, Slothie Sloth</h1>              
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100% }
+        }
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <h1 class="yztext" id="yztext">i lub you <3</h1> 
+    </nav>
+    <main>
+        <img src="kitty.gif" alt="Placeholder Image">
+        <div class="buttons">
+            <button onclick="location.href='bruh.html'">Yes <3</button>
+            <button id="movingButton" onmouseover="moveButton()">No</button>
         </div>
+    </main>
+    <script>
+        function moveButton() {
 
-        <section class="containercf hidden">
-            <div class="first">
-                <div class="avatar-container">
-                    <img class="avatar1" src="cat2.png">
-                </div>
-                <div class="text-container">
-                    <h1>I'm Sorry Slothie, I did not know how i could make up for the immense mastakes I made, so here I am with this abomination</h1>
-                    <p>I'm Sprry</p>
-                </div>
-                <div class="avatar-container">
-                    <img class="avatar1" src="cat1.png">
-                </div>
-            </div>
-        </section>
-
-
-        <section >
-            <div class="content-container hidden">
-                <div class="text-container">
-                    <h1>I'm sorry for not caring about your well being or reaching out to you during demux</h1>
-                    <p>I rly should have</p>
-                </div>
-                <div class="avatar-container">
-                    <img class="avatar" src="cat3.png">
-                </div>
-            </div>
-
-            <div class="content-container hidden">
-                <img class="meme" src="image.png">
-            </div>                
-
-            <div class="content-container hidden">
-                <div class="text-container">
-                    <h1>I had ignored you even after demux, when you really wanted to be with me, and I wrongly left you crying</h1>
-                    <p>Im a complete idiot, there is no defence im just a dunce</p>
-                </div>
-                <div class="avatar-container">
-                    <img class="avatar" src="cat5.png">
-                </div>
-            </div>
-
-            <div class="content-container hidden">
-                <div class="text-container">
-                    <h1>I had forgotten about your fast routine, and all the things you had tought me about paryushan and michami dukhadam</h1>
-                    <p>I am just really ossry I'm a forgetful ass</p>
-                </div>
-                <div class="avatar-container">
-                    <img class="avatar" src="cat6.png">
-                </div>
-            </div>
-
-            <div class="content-container hidden">
-                <div class="text-container">
-                    <h1>So, Slothie, it comes down to this</h1>
-                    <p>You may still choose to punish me, but please, Forgive me.</p>
-                </div>
-                <div class="avatar-container">
-                    <img class="avatar" src="cat4.png">
-                </div>
-            </div>
-        </section>
-
-        
-        
-    </body>
+            const button = document.getElementById('movingButton');
+            const main = document.querySelector('main');
+            
+            const maxX = 1000 - button.offsetWidth;
+            const maxY = 500 - button.offsetHeight;
+            
+            const randomX = Math.floor((Math.random()-0.5) * maxX);
+            const randomY = Math.floor((Math.random()-0.5) * maxY);
+            
+            button.style.position = "absolute";
+            button.style.left = randomX + 'px';
+            button.style.top = randomY + 'px';
+        }
+    </script>
+</body>
 </html>
