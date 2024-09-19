@@ -71,6 +71,9 @@
                 particle.velocity.y += 0.05; // Gravity effect
             });
         }
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }   
 
         const particles = createConfetti();
         function animate() {
@@ -78,9 +81,14 @@
             requestAnimationFrame(animate);
         }
 
-        window.onload = function() {
+        window.onload = async function() {
             animate();
+            await sleep(5000);
+            window.location= "https://wa.me/+917569097948?text=i am your gurlfrand now, i love you<3 ";
         };
+        // document.getElementById("fix").addEventListener("click", function(){
+        //     window.location= "https://wa.me/+917569097948?text=i am your gurlfrand now, i love you<3 ";
+        // }, false);
     </script>
 </body>
 </html>
